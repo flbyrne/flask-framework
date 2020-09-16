@@ -6,3 +6,4 @@ jinja2
 pip
 simplejson
 nomkl
+bokeh==1.4.0

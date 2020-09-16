@@ -7,29 +7,45 @@
     <meta name="author" content="@gotoariel">
     <!-- <link rel="icon" href="favicon.ico"> -->
 
-    <title>Wilkommen, bienvenue, and welcome to Heroku!</title>
+    <title>Stock Charts</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-left">
-          <h2>Hello, World!</h2>
-          <ul>
-            <li><a target="_blank" href="https://www.heroku.com/">Heroku</a></li>
-            <li><a target="_blank" href="http://flask.pocoo.org/">Flask</a></li>
-            <li><a target="_blank" href="http://jinja.pocoo.org/docs/2.9/">Jinja2</a></li>
-            <li><a target="_blank" href="http://getbootstrap.com/">Bootstrap</a></li>
-          </ul>
-        </div>
+          <form id='input' method='post' action='/'>
+          <h1>STOCK CHARTING TOOL </h1>
+          <hr>
+          <p>Ticker symbol: <input type='text' name='ticker' placeholder='EnterTicker' /></p>
+          <p><input type="submit" value="Submit"></p>
+          </form>
       </div>
     </div>
+    	<script src="https://cdn.bokeh.org/bokeh/release/bokeh-1.4.0.min.js"
+        	crossorigin="anonymous"></script>
+	<script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-1.4.0.min.js"
+        	crossorigin="anonymous"></script>
+	<script src="https://cdn.bokeh.org/bokeh/release/bokeh-tables-1.4.0.min.js"
+        	crossorigin="anonymous"></script>
+        
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
+
 </html>
+
+{% block content %}
+
+	{{ script|safe }}
+	{{ div|safe }}
+
+{% endblock content %} 
+
+
